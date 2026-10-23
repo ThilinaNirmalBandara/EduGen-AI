@@ -1,0 +1,40 @@
+{
+  "title": "Understanding Rayleigh Fading",
+  "scenes": [
+    {
+      "type": "title",
+      "title": "Rayleigh Fading",
+      "subtitle": "A quick wireless-communications introduction",
+      "duration": 4
+    },
+    {
+      "type": "bullets",
+      "title": "Why the received signal changes",
+      "bullets": [
+        "Signals can travel along several reflected paths.",
+        "Path components may arrive with different phases.",
+        "Their sum changes the received amplitude."
+      ],
+      "duration": 7
+    },
+    {
+      "type": "process",
+      "title": "Multipath propagation",
+      "steps": [
+        "Transmitter",
+        "Multiple paths",
+        "Receiver"
+      ],
+      "duration": 6
+    },
+    {
+      "type": "summary",
+      "title": "Key takeaways",
+      "bullets": [
+        "Multipath causes fluctuations in received amplitude.",
+        "Rayleigh fading is a common non-LOS model."
+      ],
+      "duration": 6
+    }
+  ]
+}

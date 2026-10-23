@@ -1,0 +1,47 @@
+{
+  "title": "A closer look",
+  "scenes": [
+    {
+      "type": "bullets",
+      "title": "Getting started",
+      "duration": 13,
+      "visual_type": "concepts",
+      "learning_objective": "Introduce the water cycle through evaporation, condensation, precipitation, and collection between ocean, air, clouds, and land.",
+      "important_concepts": ["water cycle", "evaporation", "condensation", "precipitation", "collection"],
+      "bullets": ["Evaporation", "Condensation", "Precipitation", "Collection"],
+      "narration_text": "Water moves between the ocean, air, clouds, and land. We will follow four connected processes: evaporation, condensation, precipitation, and collection. Sunlight supplies energy for evaporation, while gravity helps falling water return toward lower ground."
+    },
+    {
+      "type": "process",
+      "title": "Following the changes",
+      "duration": 15,
+      "visual_type": "process",
+      "learning_objective": "Follow all four water cycle phases in order: evaporation, condensation, precipitation, collection.",
+      "important_concepts": ["evaporation", "condensation", "precipitation", "collection"],
+      "steps": ["Evaporation: liquid becomes vapor", "Condensation: vapor forms droplets", "Precipitation: water falls", "Collection: water gathers"],
+      "narration_text": "First, liquid water evaporates into invisible vapor. Next, cooling air can allow vapor to condense into cloud droplets. Droplets or ice particles grow and fall as precipitation. Water then collects in rivers, lakes, or the ocean."
+    },
+    {
+      "type": "comparison",
+      "title": "Making connections",
+      "duration": 10,
+      "visual_type": "comparison",
+      "learning_objective": "Distinguish invisible water vapor from visible liquid droplets during evaporation and condensation.",
+      "important_concepts": ["evaporation", "condensation", "water vapor", "cloud droplets"],
+      "left": "Invisible water vapor: gas",
+      "right": "Visible cloud droplets: liquid",
+      "relationship": "Evaporation and condensation change water's physical state",
+      "narration_text": "Invisible vapor is a gas; visible clouds contain tiny droplets or ice. Evaporation and condensation change water's state, rather than creating new water."
+    },
+    {
+      "type": "summary",
+      "title": "Putting it together",
+      "duration": 12,
+      "visual_type": "concepts",
+      "learning_objective": "Summarize how evaporation, condensation, precipitation, and collection connect the water cycle.",
+      "important_concepts": ["water cycle", "evaporation", "condensation", "precipitation", "collection"],
+      "bullets": ["Evaporate, condense, precipitate, collect", "Water cycles between connected stores"],
+      "narration_text": "To summarize, evaporation lifts vapor, condensation forms droplets, precipitation brings water down, and collection gathers it again. These connected pathways repeat throughout the water cycle across our planet."
+    }
+  ]
+}

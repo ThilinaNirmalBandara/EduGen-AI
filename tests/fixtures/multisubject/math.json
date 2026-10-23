@@ -1,0 +1,61 @@
+{
+  "title": "A closer look",
+  "scenes": [
+    {
+      "type": "equation",
+      "title": "Getting started",
+      "duration": 13,
+      "visual_type": "equation",
+      "learning_objective": "Define gradient descent on quadratic loss f(x)=x squared using the derivative and learning rate to update a parameter.",
+      "important_concepts": ["gradient descent", "quadratic loss", "gradient", "learning rate", "parameter update"],
+      "equation": "x_{t+1}=x_t-\\alpha f'(x_t)",
+      "animation_params": {"prepared_visuals": true},
+      "narration_text": "Gradient descent adjusts a parameter to reduce a loss. For our quadratic loss, square the parameter to measure error. The gradient is twice the parameter. Subtract the learning rate times this gradient at each update."
+    },
+    {
+      "type": "graph",
+      "title": "Following the changes",
+      "duration": 12,
+      "visual_type": "graph",
+      "learning_objective": "Interpret the tangent slope of quadratic loss and a downhill parameter update on the parabola.",
+      "important_concepts": ["quadratic loss", "tangent slope", "gradient", "parameter update"],
+      "graph_type": "gradient_descent",
+      "equation": "f(x)=x^2",
+      "animation_params": {"initial_x": 3, "learning_rate": 0.2, "iterations": 1, "demo": "quadratic_descent", "prepared_visuals": true},
+      "visual_timeline": [
+        {"narration_text": "The parabola has its minimum at zero.", "action": "reveal", "start_time": 0, "animation_duration": 3, "parameters": {"iteration": 0}},
+        {"narration_text": "Starting at three gives loss nine and positive slope six.", "action": "gradient", "start_time": 3, "animation_duration": 4, "parameters": {"iteration": 0}},
+        {"narration_text": "A suitable step against that slope moves left toward the minimum, reducing the loss.", "action": "update", "start_time": 7, "animation_duration": 5, "parameters": {"iteration": 0}}
+      ],
+      "narration_text": "The parabola has its minimum at zero. Starting at three gives loss nine and positive slope six. A suitable step against that slope moves left toward the minimum, reducing the loss."
+    },
+    {
+      "type": "worked_example",
+      "title": "Making connections",
+      "duration": 14,
+      "visual_type": "worked_example",
+      "learning_objective": "Compute one gradient descent update from initial x=3 with learning_rate=0.2, obtaining x=1.8 and loss=3.24.",
+      "important_concepts": ["gradient", "learning rate", "parameter update", "quadratic loss"],
+      "equation": "f(x)=x^2",
+      "animation_params": {"initial_x": 3, "learning_rate": 0.2, "iterations": 1, "demo": "quadratic_descent", "prepared_visuals": true},
+      "visual_timeline": [
+        {"narration_text": "Choose learning rate zero point two.", "action": "reveal", "start_time": 0, "animation_duration": 3, "parameters": {"iteration": 0}},
+        {"narration_text": "Multiply it by six to get one point two.", "action": "gradient", "start_time": 3, "animation_duration": 3, "parameters": {"iteration": 0}},
+        {"narration_text": "Subtract that from three: the new parameter is one point eight.", "action": "update", "start_time": 6, "animation_duration": 4, "parameters": {"iteration": 0}},
+        {"narration_text": "Squaring it gives loss three point two four.", "action": "loss", "start_time": 10, "animation_duration": 4, "parameters": {"iteration": 0}}
+      ],
+      "steps": ["Initial parameter: 3; loss: 9", "Gradient: 2 * 3 = 6", "Update: 3 - 0.2 * 6 = 1.8", "New loss: 1.8^2 = 3.24"],
+      "narration_text": "Choose learning rate zero point two. Multiply it by six to get one point two. Subtract that from three: the new parameter is one point eight. Squaring it gives loss three point two four."
+    },
+    {
+      "type": "summary",
+      "title": "Putting it together",
+      "duration": 11,
+      "visual_type": "concepts",
+      "learning_objective": "Summarize gradient descent: recompute the gradient, apply a suitable learning rate, and monitor convergence through the loss.",
+      "important_concepts": ["gradient", "learning rate", "parameter update", "convergence"],
+      "bullets": ["Compute the current gradient", "Subtract learning rate times gradient", "Check loss and repeat"],
+      "narration_text": "In summary, recompute the gradient after each update and monitor the loss. Step size matters; oversized steps can fail to improve it. Stop when gradients and improvements become sufficiently small."
+    }
+  ]
+}

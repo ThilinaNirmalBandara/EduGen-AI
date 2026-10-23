@@ -1,0 +1,47 @@
+{
+  "title": "A closer look",
+  "scenes": [
+    {
+      "type": "process",
+      "title": "Getting started",
+      "duration": 13,
+      "visual_type": "process",
+      "learning_objective": "Trace IP packets from sender through routers to receiver, distinguishing packet forwarding from TCP endpoint reliability.",
+      "important_concepts": ["IP packets", "routers", "sender", "receiver", "packet forwarding"],
+      "steps": ["Sender sends IP packets", "Routers forward toward destination", "Receiver obtains TCP data"],
+      "narration_text": "A sender carries TCP data inside IP packets. Routers inspect destination addresses and forward packets toward the receiver. They choose onward paths, while TCP at the endpoints manages a reliable, ordered stream of bytes for applications."
+    },
+    {
+      "type": "comparison",
+      "title": "Following the changes",
+      "duration": 13,
+      "visual_type": "comparison",
+      "learning_objective": "Distinguish forward IP packet delivery from reverse TCP acknowledgments sent by the receiving endpoint, not by routers.",
+      "important_concepts": ["IP packets", "routers", "TCP acknowledgments", "receiver", "sender"],
+      "left": "Data packets: sender toward receiver",
+      "right": "TCP ACK: receiver toward sender",
+      "relationship": "The receiver's TCP endpoint acknowledges bytes; routers forward IP packets",
+      "narration_text": "The receiving TCP endpoint sends an acknowledgment back toward the sender, indicating the next byte expected. This reverse acknowledgment also travels in IP packets through routers. Routers forward it; they do not acknowledge TCP data themselves."
+    },
+    {
+      "type": "process",
+      "title": "Making connections",
+      "duration": 12,
+      "visual_type": "process",
+      "learning_objective": "Explain how TCP sequence numbers, acknowledgments, and retransmission recover missing bytes and support ordered delivery.",
+      "important_concepts": ["sequence numbers", "TCP acknowledgments", "retransmission", "ordered delivery"],
+      "steps": ["Track bytes using sequence numbers", "Detect missing progress", "Retransmit missing data"],
+      "narration_text": "Sequence numbers identify byte positions. When acknowledgment progress stalls, a timeout can trigger retransmission of missing data. The receiver uses sequence numbers to restore order before delivering bytes to the application."
+    },
+    {
+      "type": "summary",
+      "title": "Putting it together",
+      "duration": 12,
+      "visual_type": "concepts",
+      "learning_objective": "Summarize IP router forwarding versus TCP endpoint acknowledgments, retransmission, and ordered delivery.",
+      "important_concepts": ["IP packets", "routers", "TCP acknowledgments", "retransmission", "ordered delivery"],
+      "bullets": ["IP routers forward packets", "TCP endpoints acknowledge bytes", "TCP retries missing data and restores order"],
+      "narration_text": "To summarize, IP routers forward packets. TCP endpoints acknowledge received bytes, retry missing data, and provide ordered delivery. Forwarding and reliability have different responsibilities."
+    }
+  ]
+}

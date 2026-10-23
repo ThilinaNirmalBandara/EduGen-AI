@@ -1,0 +1,8 @@
+manim>=0.19,<0.21
+pydantic>=2.7,<3
+ollama>=0.4,<1
+rich>=13.7,<15
+kokoro>=0.9.4,<1
+soundfile>=0.12,<1
+numpy>=1.26,<3
+Pillow>=10,<13

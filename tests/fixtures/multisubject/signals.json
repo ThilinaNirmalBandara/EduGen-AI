@@ -1,0 +1,47 @@
+{
+  "title": "A closer look",
+  "scenes": [
+    {
+      "type": "process",
+      "title": "Getting started",
+      "duration": 13,
+      "visual_type": "process",
+      "learning_objective": "Introduce signal processing with a sensor input, low-pass filter, and output preserving slower changes while reducing high-frequency variation.",
+      "important_concepts": ["sensor input", "low-pass filter", "slower changes", "high-frequency variation", "filtered output"],
+      "steps": ["Measure the sensor input", "Apply a low-pass filter", "Inspect the filtered output"],
+      "narration_text": "Imagine a sensor tracking a slowly changing temperature while rapid electrical fluctuations appear in its readings. A low pass filter can preserve those slower changes while reducing high frequency variation, producing a smoother output for inspection."
+    },
+    {
+      "type": "comparison",
+      "title": "Following the changes",
+      "duration": 13,
+      "visual_type": "comparison",
+      "learning_objective": "Compare input and output waveforms qualitatively: slower changes remain while high-frequency ripple is reduced by low-pass filtering.",
+      "important_concepts": ["input waveform", "output waveform", "slower changes", "high-frequency variation", "low-pass filter"],
+      "left": "Input: slow trend with rapid ripple",
+      "right": "Output: slow trend with less ripple",
+      "relationship": "Low-pass filtering attenuates faster variation relative to slower changes",
+      "narration_text": "Compare the input and output waveforms. The broad rise and fall remain recognizable, while the rapid ripple becomes smaller. This is a qualitative example: actual attenuation depends on the filter design and the frequencies present."
+    },
+    {
+      "type": "process",
+      "title": "Making connections",
+      "duration": 12,
+      "visual_type": "process",
+      "learning_objective": "Explain cutoff choice as a tradeoff between high-frequency attenuation, useful signal detail, and possible delay.",
+      "important_concepts": ["cutoff choice", "high-frequency variation", "useful signal", "delay"],
+      "steps": ["Identify the useful signal changes", "Choose a suitable cutoff", "Check detail and possible delay"],
+      "narration_text": "Choose the cutoff with the measurement goal in mind. Useful fast changes may also be weakened, and some filters introduce delay. Smoothing cannot automatically distinguish unwanted fluctuations from important signal detail."
+    },
+    {
+      "type": "summary",
+      "title": "Putting it together",
+      "duration": 12,
+      "visual_type": "concepts",
+      "learning_objective": "Summarize qualitative low-pass filtering and the need to check preserved slower changes, reduced high-frequency variation, detail, and delay.",
+      "important_concepts": ["low-pass filter", "slower changes", "high-frequency variation", "cutoff choice", "delay"],
+      "bullets": ["Preserve slower changes", "Reduce high-frequency variation", "Check useful detail and delay"],
+      "narration_text": "In summary, low pass filtering favors slower changes over faster variation. Inspect both waveforms and check whether the chosen filter preserves the information your application needs."
+    }
+  ]
+}

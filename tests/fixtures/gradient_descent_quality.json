@@ -1,0 +1,51 @@
+{
+  "title": "Gradient descent: slope, updates and convergence",
+  "scenes": [
+    {
+      "type": "title", "title": "Learning by reducing loss", "subtitle": "Parameters, predictions and error", "duration": 24,
+      "learning_objective": "Connect model parameters to a measurable loss.",
+      "important_concepts": ["Choose parameters", "Measure prediction error", "Reduce the loss"],
+      "narration_text": "A model uses adjustable parameters to make predictions. A loss function measures how far those predictions are from the desired answers. Training changes the parameters to reduce that loss. We will study one parameter first, so that every update can be checked numerically. The same idea extends to many parameters: each component of the gradient tells us how the loss changes along one coordinate."
+    },
+    {
+      "type": "graph", "title": "The gradient and tangent", "equation": "f(x)=x^2", "duration": 24,
+      "learning_objective": "Interpret a tangent slope and choose a downhill direction.",
+      "narration_text": "For a quadratic loss, the derivative is twice the current parameter. On the positive side of the curve, the tangent slopes upward as the parameter increases. Moving in the opposite direction therefore lowers the loss for a sufficiently small step. Near the minimum the slope becomes smaller. The gradient gives a local direction, not a promise that every possible step size will improve the loss."
+    },
+    {
+      "type": "process", "title": "The optimization loop", "duration": 40,
+      "learning_objective": "Apply all four optimization steps in their original order.",
+      "steps": ["Initialize the parameter", "Calculate the gradient", "Apply the parameter update", "Check the new loss"],
+      "narration_text": "First choose an initial parameter and a positive learning rate. Keep the initial loss as a reference for later comparisons. Next evaluate the derivative at the current parameter, not at the desired answer. This local calculation tells us which direction increases the loss most rapidly. Then subtract the learning rate times that gradient from the current parameter. Use the newly calculated parameter for the next prediction and derivative. Finally measure the new loss and check whether it has improved. Repeat the same ordered loop until improvement is small or a stopping budget is reached."
+    },
+    {
+      "type": "equation", "title": "Derive the update rule", "duration": 24,
+      "equation": "\\theta_{t+1}=\\theta_t-\\alpha\\nabla L(\\theta_t)",
+      "learning_objective": "Derive a descent direction using a first-order approximation.",
+      "narration_text": "A first order approximation describes a small change in the loss using the gradient and the parameter displacement. Choosing a displacement opposite to the gradient makes their inner product nonpositive. Multiplying by a positive learning rate controls the magnitude of the displacement. Adding that displacement to the current parameter gives the gradient descent update. Smoothness and a sufficiently small learning rate are needed to turn this local argument into a decrease in the actual loss."
+    },
+    {
+      "type": "comparison", "title": "Compare learning rates", "duration": 24,
+      "learning_objective": "Compare slow progress, stable descent and divergence on a quadratic.",
+      "left": "Small steps: slow progress", "right": "Oversized steps: divergence", "relationship": "Step size controls speed and stability",
+      "narration_text": "The learning rate changes the behavior of the same optimization rule. A very small rate makes reliable but slow progress. A moderate rate reduces this quadratic loss more rapidly. A rate larger than one makes this particular quadratic update unstable: the parameter overshoots and its magnitude grows. The loss histories compare these choices from the same starting point. Stability depends on the curvature of the loss, so a rate that works here is not a universal setting."
+    },
+    {
+      "type": "worked_example", "title": "Calculate two numerical updates", "duration": 24,
+      "equation": "f(x)=x^2", "steps": ["Start at x = 3", "Calculate the derivative", "Apply the update", "Measure the new loss"],
+      "learning_objective": "Compute the gradient, new parameter and loss without guessed arithmetic.",
+      "narration_text": "Start with a parameter of three and a learning rate of zero point two. Evaluate twice the current parameter to obtain the gradient. Subtract the learning rate times that gradient to find the new parameter, then square the result to measure the new loss. Repeat the calculation using the new parameter rather than reusing the old gradient. Every displayed numerical value is calculated from the same deterministic update rule."
+    },
+    {
+      "type": "graph", "title": "Convergence and loss reduction", "duration": 36, "equation": "f(x)=x^2",
+      "learning_objective": "Distinguish a decreasing loss history from parameter-space motion.",
+      "narration_text": "A loss history plots the measured loss against the number of completed updates. This is different from plotting loss against the parameter itself. For our stable quadratic example, repeated updates shrink the parameter magnitude and the loss approaches zero. The improvements become smaller near the minimum because the gradient also becomes smaller. In practice, monitor both the loss and a stopping criterion. Reaching a small gradient does not guarantee a global minimum for every nonconvex problem, even though this simple convex quadratic has only one minimum."
+    },
+    {
+      "type": "summary", "title": "Summary: the complete learning loop", "duration": 24,
+      "learning_objective": "Connect the gradient, learning rate, numerical update and convergence.",
+      "bullets": ["Measure the local slope", "Move against the gradient", "Choose a stable learning rate", "Recompute and monitor the loss"],
+      "narration_text": "The gradient measures how the loss changes locally. Move against it, using a learning rate that is small enough for stable progress. Our numerical example checks the gradient, parameter update and new loss rather than trusting an unexplained result. Recompute the gradient after each update and monitor convergence. These four ideas connect the tangent picture, the mathematical derivation and the practical optimization loop. For more complex models the parameter becomes a vector, but the structure of the update remains the same."
+    }
+  ]
+}
